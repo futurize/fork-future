@@ -30,6 +30,17 @@ forkAndLog(timeout('POINTFREE', 3000));
 
 `fork(onRejected)(onResolved)(future)`
 
+### `forkToPromise :: (Future a b) -> (Promise a b)`
+
+```js
+const forkToPromise = require('fork-future').forkToPromise;
+
+// Fork, then continue using a promise chain.
+`forkToPromise(future).then(...)`
+
+// Use async/await (if supported in your environment).
+`await forkToPromise(future)`
+```
 
 ## License
 
